@@ -1,3 +1,8 @@
+/*
+*******************
+file: input.c
+*******************
+*/
 
 #include "../include/input.h"
 
@@ -6,7 +11,7 @@
 char* commands[] = {"mov","cmp", "add", "sub", "lea","clr", "not", "inc",
 	 				   "dec","jmp", "bne", "red","prn", "jsr","rts", "stop"};
 
-void process_file(char* file_name)
+void process_file(char* file)
 {
-	printf("%s\n", file_name);
+	printf("%s\n", file);
 }

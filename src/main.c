@@ -1,5 +1,8 @@
-
-
+/*
+*******************
+file: main.c
+*******************
+*/
 #include "../include/input.h"
 #include <stdlib.h>
 
