@@ -1,2 +1,8 @@
+#ifndef _INPUT_H
+#define _INPUT_H
 
-void process_file(char*);
+#include <stdio.h>
+
+void process_file(char* file_name);
+
+#endif
