@@ -2,7 +2,7 @@
 #ifndef _ASSEMBLER_H
 #define _ASSEMBLER_H
 
-#include <stdio.h> /*add to able use struct*/
+
 
 /*General Symbols*/
 #define TRUE = 1
