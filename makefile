@@ -5,7 +5,7 @@ INCLUDE=./include/
 
 all: myAssembler
 
-myAssembler: output.o input.o main.o
+myAssembler: auk.o data.o output.o input.o main.o
 	@echo "Making myAssembler an exe file"
 	@gcc -g -Wall -o myAssembler $(BIN)/input.o $(BIN)/output.o $(BIN)/main.o
 
@@ -18,10 +18,18 @@ input.o: $(SOURCE)/input.c $(INCLUDE)/input.h
 	@gcc -g -Wall -ansi -pedantic -c $(SOURCE)/input.c -o $(BIN)/input.o
 
 output.o: $(SOURCE)/output.c $(INCLUDE)/output.h
-	@echo "Creating bin directory"
-	@mkdir -p bin
 	@echo "Compilling output and stoping before linking and the output is output.o"
 	@gcc -g -Wall -ansi -pedantic -c $(SOURCE)/output.c -o $(BIN)/output.o
+
+data.o: $(SOURCE)/data.c $(INCLUDE)/data.h
+	@echo "Compilling data and stoping before linking and the output is data.o"
+	@gcc -g -Wall -ansi -pedantic -c $(SOURCE)/data.c -o $(BIN)/dauk
+
+auk.o: $(SOURCE)/auk.c $(INCLUDE)/auk.h
+	@echo "Creating bin directory"
+	@mkdir -p bin
+	@echo "Compilling auk and stoping before linking and the output is auk.o"
+	@gcc -g -Wall -ansi -pedantic -c $(SOURCE)/auk.c -o $(BIN)/auk.o
 
 
 #tell make that "clean" is not a file name!
@@ -32,6 +40,7 @@ clean:
 	@rm -vf $(BIN)/* myAssembler
 	@echo "and removing bin directory
 	@rmdir bin #need to fix!!!
+	
 #run:
 #	@echo "Running the Asseembly on myAssmbler.."
 #	./myshell
