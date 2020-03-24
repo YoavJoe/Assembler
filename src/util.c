@@ -10,8 +10,8 @@ file: util.c
 /*
 int is_comment(char line[])
 input: line from an input file
-chack if the line is a comment or an empty line
-return TRUE if so, otherwish FALSE
+check if the line is a comment or an empty line
+return TRUE if so, otherwise FALSE
 */
 int is_comment(char line[])
 {
