@@ -37,13 +37,13 @@ Main header file for the program
 /*Uesd to hold and organize the machine code words create by the progrem */
 struct
 {
-	int value; /**/
-	char type; /**/
-}memory[MAX_MEM_SIZE];
+	int value; 
+	char type; 
+}memory[MAX_MEM_SIZE+1];
 
 /*Global Varibales*/
 
-extern int DC, IC, line_num;  /*data counter, instruction conter and line counter*/
+extern int DC, IC, line_num;  /*data counter, instruction counter and line counter*/
 extern int caught_error;      /*used to flag erros existence*/
 extern char* commends[];      /*a list of valid command names*/
 
