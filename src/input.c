@@ -4,7 +4,11 @@ file: input.c
 *******************
 */
 
+#include "../include/assembler.h"
 #include "../include/input.h"
+#include "../include/data.h"
+#include "../include/util.h"
+#include "../include/output.h"
 
 /*Global Var*/
 /*List of commands with there opcode ordered*/
@@ -29,7 +33,7 @@ void process_file(char* file)
 
 	if(inputFile == NULL)
 	{
-		printf(stderr,"ERROR: Unable to open file: \t%s\n", file_path);
+		fprintf(stderr,"ERROR: Unable to open file: \t%s\n", file_path);
 		return;
 	}
 
@@ -52,11 +56,8 @@ void process_file(char* file)
 		if(create_ext_file(file))
 			fprintf(stderr, "ERROR: Failed making externals file./n/n");
 
-		if(!caught_error)
-		{
-			fprintf(stdout, "%s was succsessfully processed!!\n\n", file);
-			return;
-		}
+		fprintf(stdout,"%s was succsessfully processed!!\n\n", file);
+			
 	}
 }
 

@@ -5,6 +5,7 @@ file: main.c
 */
 #include "../include/input.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 int main(int argc, char* argv[])
 {
