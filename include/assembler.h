@@ -16,6 +16,7 @@ Main header file for the program
 #define TRUE 1
 #define FALSE 0
 #define ERROR 2           /*Used as return value from functions*/
+#define DEF_LABLE "MAIN:" /*Dedault lable*/
 #define CMD_COUNT 16      /*Total number of commands*/
 #define MAX_LEN  30       /*Max line length*/
 #define FILE_MAX 200      /*Arbitray limit for file name length*/
