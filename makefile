@@ -8,7 +8,7 @@ CFLAGS=-g -Wall -ansi -pedantic -c
 
 all: myAssembler
 
-myAssembler: util.o data.o output.o input.o main.o
+myAssembler: hashtable.o util.o data.o output.o input.o main.o
 	@echo "Final phase"
 	@gcc -g -Wall -o myAssembler $(BIN)/util.o $(BIN)/data.o $(BIN)/output.o $(BIN)/input.o $(BIN)/main.o
 
@@ -29,10 +29,14 @@ data.o: $(SOURCE)/data.c $(INCLUDE)/data.h
 	@gcc $(CFLAGS) $(SOURCE)/data.c -o $(BIN)/data.o
 
 util.o: $(SOURCE)/util.c $(INCLUDE)/util.h
-	@echo "Creating bin directory"
-	@mkdir -p bin
 	@echo "Compilling util and stoping before linking and the output is util.o"
 	@gcc $(CFLAGS) $(SOURCE)/util.c -o $(BIN)/util.o
+
+hashtable.o: $(SOURCE)/hashtable.c $(INCLUDE)/hashtable.h
+	@echo "Creating bin directory"
+	@mkdir -p bin
+	@echo "Compilling hashtable and stoping before linking and the output is hashtable.o"
+	@gcc $(CFLAGS) $(SOURCE)/hashtable.c -o $(BIN)/hashtable.o
 
 
 #tell make that "clean" is not a file name!
