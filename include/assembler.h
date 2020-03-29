@@ -3,6 +3,7 @@
 file: assembler.h
 *******************
 Main header file for the program
+Defineds macros and declares global variables and Hash Table
 */
 #ifndef _ASSEMBLER_H
 #define _ASSEMBLER_H
@@ -16,7 +17,7 @@ Main header file for the program
 #define TRUE 1
 #define FALSE 0
 #define ERROR 2           /*Used as return value from functions*/
-#define DEF_LABLE "MAIN:" /*Dedault lable*/
+#define NULL_LBL "0LABEL" /*An invalid lable used to recognaize an empty lable*/
 #define CMD_COUNT 16      /*Total number of commands*/
 #define MAX_LEN  30       /*Max line length*/
 #define FILE_MAX 200      /*Arbitray limit for file name length*/
@@ -35,17 +36,25 @@ Main header file for the program
 #define TYPE_R 'R'        /*Relocatable*/
 #define TYPE_E 'E'        /*External*/
 
+/*symbols types*/
+#define DEF_CODE 1        /*Code symbol*/
+#define DEF_DATA -1       /*Data symbol*/
+#define DEF_EXT 2         /*Extern symbol*/
+#define DEF_ENT 3         /*Entery symbol*/
+
 /*Uesd to hold and organize the machine code words create by the progrem */
-struct
+typedef struct
 {
 	int value; 
 	char type; 
-}memory[MAX_MEM_SIZE+1];
+}memory[MAX_MEM_SIZE];
+
 
 /*Global Varibales*/
 
 extern int DC, IC, line_num;  /*data counter, instruction counter and line counter*/
 extern int caught_error;      /*used to flag erros existence*/
 extern char* commends[];      /*a list of valid command names*/
+extern HashTable* hase_table;    /*pointer to Symbol Table*/
 
 #endif
