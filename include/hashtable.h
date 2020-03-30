@@ -7,27 +7,31 @@ file: hashtable.h
 #define _HASHTABLE_H
 
 /*Node for storing an item in a linked list*/
-typedef struct 
+typedef struct node
 {
-	int key;
-	int value;
+	int addr;
+	int type;  /*states in what kind of addressing method the lable was used*/
 	struct node* next;
 }node;
 
-typedef struct 
+typedef struct HashTable
 {
-	node *head;
-	/*head pointing the first element of linked list at an index of Hash Table*/
-}list;
+	char lable[32];  /*lable name*/
+	int type;        /*notes if the lable points to data or code*/
 
-typedef struct
-{
-	char lable;   
-	node* plist; /*pointer to list*/
-}HashTable, *Hashptr;
+	/*linking information type: 'E'xternal, 'A'bsolute or 'R'elocatable*/
+	int defined_as;
 
-void init_data();
-int insert();
-void clear();
-void print_HashTable();
+	/*raw addressing value before addition of starting 
+	address value and optional addition for data labels*/
+	int addr_value;
+	node* plist;     /*pointer to list*/
+	struct HashTable* next; /*point to the struct in the HashTable*/
+}HashTable;
+
+HashTable* hash_table;    /*pointer to Symbol Table*/
+
+void insert(char* lable, int adrs_type);
+
+
 #endif
