@@ -6,6 +6,8 @@ file: hashtable.h
 #ifndef _HASHTABLE_H
 #define _HASHTABLE_H
 
+#define HASH_SIZE 128
+
 /*Node for storing an item in a linked list*/
 typedef struct node
 {
@@ -29,9 +31,11 @@ typedef struct HashTable
 	struct HashTable* next; /*point to the struct in the HashTable*/
 }HashTable;
 
+
 HashTable* hash_table;    /*pointer to Symbol Table*/
 
 void insert(char* lable, int adrs_type);
+int hashCode(char key[]);
 
 
 #endif
