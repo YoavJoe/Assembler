@@ -14,8 +14,8 @@ file: input.c
 /*List of commands with there opcode ordered*/
 int DC, IC, line_num;     /*data, instruction and line counters*/
 int caught_error = FALSE; /*flag used globally to track the existence*/
-char* commands[] = {"mov","cmp", "add", "sub", "lea","clr", "not", "inc",
-	 				   "dec","jmp", "bne", "red","prn", "jsr","rts", "stop"};
+char* commands[] = {"mov", "cmp", "add", "sub", "lea", "clr", "not", "inc", 
+	"dec", "jmp", "bne", "red", "prn", "jsr", "rts", "stop"};
 
 void process_file(char* file)
 {
@@ -63,5 +63,5 @@ void process_file(char* file)
 
 void process_line(char line[])
 {
-
+	
 }
