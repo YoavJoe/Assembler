@@ -37,10 +37,12 @@ Defineds macros and declares global variables and Hash Table
 #define TYPE_E 'E'        /*External*/
 
 /*symbols types*/
-#define DEF_CODE 1        /*Code symbol*/
-#define DEF_DATA -1       /*Data symbol*/
+#define DEF_CODE 1        /*Code decleration*/
 #define DEF_EXT 2         /*Extern symbol*/
 #define DEF_ENT 3         /*Entery symbol*/
+#define DEF_NDS 4         /*Declared but not defined symbols*/
+#define CODE_DEF 1        /*Code symbols*/
+#define DATA_DEF -1       /*Data symbols*/
 
 /*Uesd to hold and organize the machine code words create by the progrem */
 typedef struct
@@ -55,6 +57,5 @@ typedef struct
 extern int DC, IC, line_num;  /*data counter, instruction counter and line counter*/
 extern int caught_error;      /*used to flag erros existence*/
 extern char* commends[];      /*a list of valid command names*/
-extern HashTable* hase_table;    /*pointer to Symbol Table*/
 
 #endif
