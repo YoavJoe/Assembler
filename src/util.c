@@ -24,3 +24,30 @@ int is_comment(char line[])
 
 	return FALSE;
 }
+
+int valid_cmd(char cmd[])
+{
+	return 0;
+}
+
+int is_reg(char* reg)
+{
+	return 0;
+}
+
+int valid_label(char label[])
+{
+	return 0;
+}
+
+void trim_str(char* str)
+{
+	int i, check;
+	i = check = strlen(str) - 1;
+
+	while(isspace(str[i])) /*check if there is a space*/
+		i--;
+
+	if(i < check)
+		str[i + 1] = '\0'; /*delete leading blanks*/
+}

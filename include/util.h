@@ -8,7 +8,8 @@ file: util.h
 
 int is_comment(char line[]);
 int valid_cmd(char cmd[]);
-int is_reg();
-int valid_lable();
+int is_reg(char* reg);
+int valid_label(char label[]);
+void trim_str(char* str);
 
 #endif
