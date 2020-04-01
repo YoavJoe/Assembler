@@ -8,5 +8,6 @@ file: input.h
 
 void process_file(char* file);
 void process_line(char line[]);
+void process_cmd(char cmd[]);
 
 #endif
