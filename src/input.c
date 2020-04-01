@@ -6,7 +6,7 @@ file: input.c
 
 #include "../include/assembler.h"
 #include "../include/input.h"
-#include "../include/data.h"
+#include "../include/hashtable.h"
 #include "../include/util.h"
 #include "../include/output.h"
 
@@ -63,5 +63,37 @@ void process_file(char* file)
 
 void process_line(char line[])
 {
+	int is_label = FALSE;
+	char* token, *label, *lineBAK;
+	label = lineBAK = NULL;
+	strcpy(lineBAK, line);
+
+	token = strtok(lineBAK, " \n");
+	if(token[strlen(token) - 1] == ':')
+	{
+		strcpy(label, token);
+		is_label = TRUE;
+		if(!valid_label(label))
+		{
+			fprintf(stderr, "Error in line %d - Invalid label %s\n", line_num, label);
+			caught_error = TRUE;
+		}
+		/*if the next token is a command, cut the name only*/
+		token = strtok(NULL, " \n");
+	}
 	
+	if(valid_cmd(token) >= 0) /*if the command is valid*/
+	{
+		if(is_label)
+			define_lable(label, CODE_DEF, DEF_CODE);
+		process_cmd(token);
+	}
+	else /*not a valid command, check other possibilities*/
+	{
+	}
+}
+
+void process_cmd(char cmd[])
+{
+
 }
