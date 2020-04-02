@@ -15,7 +15,7 @@ Defineds macros and declares global variables and Hash Table
 
 /*General Symbols*/
 #define TRUE 1
-#define FALSE -1
+#define FALSE 0
 #define ERROR 2           /*Used as return value from functions*/
 #define NULL_LBL "0LABEL" /*An invalid lable used to recognaize an empty lable*/
 #define CMD_COUNT 16      /*Total number of commands*/
@@ -38,9 +38,10 @@ Defineds macros and declares global variables and Hash Table
 
 /*symbols types*/
 #define DEF_CODE 1        /*Code decleration*/
-#define DEF_EXT 2         /*Extern symbol*/
-#define DEF_ENT 3         /*Entery symbol*/
+#define DEF_EXT 2         /*Extern decleration*/
+#define DEF_ENT 3         /*Entery decleration*/
 #define DEF_OCC 4         /*Declared but not defined symbols*/
+
 #define CODE_DEF 1        /*Code symbols*/
 #define DATA_DEF -1       /*Data symbols*/
 
