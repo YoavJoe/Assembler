@@ -69,7 +69,7 @@ int contains(char key[])
 			return TRUE;
 	}
 	printf("Error: %s not found!\n", curlabel);
-	return FALSE;
+	return -1;
 }
 
 node* get(char key[])
